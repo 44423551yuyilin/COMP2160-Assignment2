@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HurtPlayer : MonoBehaviour
 {
+    public int damageToGive = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,13 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            FindObjectOfType<PlayerStat>().HurtPlayer(damageToGive);
+        }
     }
 }
