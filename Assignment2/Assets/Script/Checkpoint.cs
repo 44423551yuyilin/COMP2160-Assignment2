@@ -18,8 +18,15 @@ public class Checkpoint : MonoBehaviour
     {
         
     }
+
+    
     public void CheckpointOn()
     {
+        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>();
+        foreach (Checkpoint cp in checkpoints)
+        {
+            cp.CheckpointOff();
+        }
         theRend.material = cpOn;
     }
     public void CheckpointOff()
