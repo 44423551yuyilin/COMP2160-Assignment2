@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarMove : MonoBehaviour
 {
     public Rigidbody rb;
-    public float speed = 15;
+    public float speed = 8;
     public float rotateSpeed = 90;
 
     // Start is called before the first frame update
@@ -36,7 +36,6 @@ public class CarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.A))
 
         {
-            this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
             this.transform.Rotate(Vector3.up * Time.deltaTime * -rotateSpeed);
 
         }
@@ -44,14 +43,12 @@ public class CarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.D))
 
         {
-            this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
             this.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
 
         }
 
         if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
-            this.transform.Translate(Vector3.back * Time.deltaTime * speed);
             this.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
         }
 
@@ -59,7 +56,6 @@ public class CarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
 
         {
-            this.transform.Translate(Vector3.back * Time.deltaTime * speed);
             this.transform.Rotate(Vector3.up * Time.deltaTime * -rotateSpeed);
 
         }

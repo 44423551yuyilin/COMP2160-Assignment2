@@ -294,6 +294,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238210530}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &560894065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560894066}
+  m_Layer: 0
+  m_Name: RayPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560894066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560894065}
+  m_LocalRotation: {x: -0.000018537152, y: -0.7071068, z: 0.000018537152, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.4, z: -0}
+  m_LocalScale: {x: 0.49999988, y: 2, z: 0.6666665}
+  m_Children: []
+  m_Father: {fileID: 1961937530}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 124.27699, y: -30, z: 0}
 --- !u!1 &802312741
 GameObject:
@@ -522,6 +552,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -587,13 +618,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 373.9, y: 43, z: 322.2}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 295.883, y: 15.02, z: 478.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e8f6ce7cffbc0428a01f0a295e75e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAway: 5
+  distanceUp: 1.3
+  smooth: 2
 --- !u!1 &1238785854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521673304}
   m_LocalRotation: {x: -0, y: -0.6920021, z: -6.8212097e-13, w: 0.7218955}
-  m_LocalPosition: {x: -0.6133423, y: -0.70011157, z: -0.5254883}
+  m_LocalPosition: {x: -0.511, y: -0.55, z: -0.48}
   m_LocalScale: {x: 0.5002233, y: 1.4285713, z: 0.6662698}
   m_Children: []
   m_Father: {fileID: 1961937530}
@@ -1063,7 +1109,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.52100754
+        value: 0.20850754
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1683,11 +1729,11 @@ GameObject:
   - component: {fileID: 1961937529}
   - component: {fileID: 1961937528}
   - component: {fileID: 1961937527}
-  - component: {fileID: 1961937526}
   - component: {fileID: 1961937531}
+  - component: {fileID: 1961937526}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1701,12 +1747,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961937525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04b03ab2f7a483b47800a055714eb23c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b69c6a4666b19046b28ee27ad3841e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 15
-  rotateSpeed: 90
+  theRB: {fileID: 1961937531}
+  forwardAccel: 0.1
+  reverseAccel: 0.1
+  maxSpeed: 50
+  turnStrength: 180
+  gravityForce: 10
+  dragOnGround: 3
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  groundRayLength: 1.5
+  groundRayPoint: {fileID: 560894066}
 --- !u!65 &1961937527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1775,11 +1830,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961937525}
   m_LocalRotation: {x: 0.000018537152, y: 0.7071068, z: -0.000018537152, w: 0.7071068}
-  m_LocalPosition: {x: 330.46, y: 0.25, z: 477.49}
+  m_LocalPosition: {x: 330.408, y: 0.25, z: 477.49}
   m_LocalScale: {x: 1.5, y: 0.5, z: 2}
   m_Children:
   - {fileID: 1521673305}
   - {fileID: 2029721651}
+  - {fileID: 560894066}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0.003, y: 90, z: 0}
@@ -1824,7 +1880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029721650}
   m_LocalRotation: {x: -0, y: -0.6920021, z: -6.8212097e-13, w: 0.7218955}
-  m_LocalPosition: {x: 0.5266522, y: -0.7001102, z: -0.52548826}
+  m_LocalPosition: {x: 0.522, y: -0.55, z: -0.476}
   m_LocalScale: {x: 0.5002233, y: 1.4285713, z: 0.6662698}
   m_Children: []
   m_Father: {fileID: 1961937530}
@@ -1879,7 +1935,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.52100754
+        value: 0.20850754
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2045,7 +2101,7 @@ GameObject:
   - component: {fileID: 2109402295}
   - component: {fileID: 2109402294}
   - component: {fileID: 2109402293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
